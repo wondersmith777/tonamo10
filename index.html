@@ -7,6 +7,16 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="お品書き｜Wondersmith @ となりのモケイフェスティバル10">
 <meta property="og:description" content="2026.11.23（月・祝）東京流通センター 第一展示場　スペース J10">
+<meta property="og:url" content="https://wondersmith777.github.io/tonamo10/">
+<meta property="og:image" content="https://wondersmith777.github.io/tonamo10/og.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:image:alt" content="WONDERSMITH お品書き となりのモケイフェスティバル10 スペースJ10">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@WonderSmith777">
+<meta name="twitter:title" content="お品書き｜Wondersmith @ となりのモケイフェスティバル10">
+<meta name="twitter:description" content="2026.11.23（月・祝）東京流通センター 第一展示場　スペース J10／11.24（火）BOOTHオンライン即売会">
+<meta name="twitter:image" content="https://wondersmith777.github.io/tonamo10/og.jpg">
 <title>お品書き｜Wondersmith @ となりのモケイフェスティバル10</title>
 <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 <style>
@@ -117,6 +127,7 @@ body{font-family:var(--go);color:#1c1b1a;display:flex;flex-direction:column;-web
 .it dl{display:grid;grid-template-columns:auto 1fr;gap:0 2.4cqw;align-content:start}
 .it dt{color:#8a857b;white-space:nowrap}
 .it dd{font-weight:500;min-width:0;overflow-wrap:anywhere}
+.it .cp{position:absolute;right:.7cqw;bottom:.7cqw;z-index:2;pointer-events:none;background:rgba(20,19,18,.6);color:#fff;font-size:2cqw;line-height:1.4;letter-spacing:.02em;padding:.6cqw 1.4cqw;white-space:nowrap}
 .it .ds{font-size:2.7cqw;font-weight:400;line-height:1.75}
 .page a{color:inherit;text-decoration:none;cursor:pointer}
 .it .ol{position:absolute;left:8cqw;bottom:8.2cqw;width:44cqw;font-family:var(--go);font-size:2.6cqw;font-weight:700;line-height:1.4}
@@ -165,17 +176,17 @@ const ITEMS = [
    specs:[["スケール","1/6"],["サイズ","510mm"],["販売数","23"]], spec:KIT,
    credits:[["イラスト","shirone@coxo_ii"],["原型","Peipei@peipeidon"],["塗装","@xiaango"]],
    imgs:["photos/01/4.jpg","photos/01/2.jpg","photos/01/3.jpg","photos/01/1.jpg"], wide:true},
-  {name:"「エルキドゥ.熱砂ver.」", series:"Fate/Grand Order", price:"28,000", tag:"新作", note:"", copy:"",
+  {name:"「エルキドゥ.熱砂ver.」", series:"Fate/Grand Order", price:"28,000", tag:"新作", note:"", copy:"©TYPE-MOON / FGO PROJECT",
    specs:[["スケール","1/6"],["サイズ","225mm"],["販売数","40"]], spec:KIT,
    credits:[["原型","尺蠖羊@Sheepworm"],["塗装","炸香蕉@boilbanana"]],
    online:"https://wondersmith.booth.pm/items/9125567", onlineNote:true,
    imgs:["photos/02/1.jpg","photos/02/2.jpg","photos/02/3.jpg","photos/02/4.jpg","photos/02/5.jpg"]},
-  {name:"「フリーレンとヒンメル」", series:"葬送のフリーレン", price:"45,000", tag:"", note:"", copy:"",
+  {name:"「フリーレンとヒンメル」", series:"葬送のフリーレン", price:"45,000", tag:"", note:"", copy:"©山田鐘人・アベツカサ／小学館",
    specs:[["スケール","1/6"],["サイズ","約270mm"],["販売数","60"]], spec:KIT,
    credits:[["原型","晔知昂@Ye_Zh_ang"],["塗装","晔知昂@Ye_Zh_ang"]],
    online:"https://wondersmith.booth.pm/items/9119818", onlineNote:true,
    imgs:["photos/03/2.jpg","photos/03/1.jpg","photos/03/3.jpg","photos/03/4.jpg"], wide:true},
-  {name:"「徘徊香」", series:"xxxHOLiC", price:"40,000", tag:"", note:"23日(祝・月)のみ販売", copy:"",
+  {name:"「徘徊香」", series:"xxxHOLiC", price:"40,000", tag:"", note:"23日(祝・月)のみ販売", copy:"©CLAMP・ST／講談社 E16",
    specs:[["スケール","1/6"],["サイズ","約290mm"],["販売数","20"]], spec:KIT,
    credits:[["原型","晔知昂@Ye_Zh_ang"],["塗装","荒岛搬砖的山药@Xueer3yao"]],
    imgs:["photos/04/1.jpg","photos/04/3.jpg","photos/04/4.jpg","photos/04/2.jpg"]},
@@ -270,7 +281,7 @@ let html = `<div class="page cover">
 </div>`;
 ITEMS.forEach((it, i) => {
   html += `<div class="page it">
-    <div class="gal">${gallery(it, i)}</div>
+    <div class="gal">${gallery(it, i)}${it.copy ? `<span class="cp">${esc(it.copy)}</span>` : ""}</div>
     <div class="bd">
       <div class="k"><span class="n en">${pad(i + 1)}</span></div>
       <div class="nm">${esc(it.name)}</div>
