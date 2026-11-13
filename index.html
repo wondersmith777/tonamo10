@@ -91,7 +91,6 @@ body{font-family:var(--go);color:#1c1b1a;display:flex;flex-direction:column;-web
 .it .gal{position:absolute;left:-.35cqw;right:-.35cqw;top:-.35cqw;height:calc(53% + .35cqw)}
 .it .ph{position:absolute;border:.35cqw solid #f4f1ea;background-color:#c8c3b8;cursor:zoom-in;overflow:hidden;font-size:3cqw}
 .it .ph:nth-child(even){background-color:#bcb7ab}
-.it .zm{position:absolute;left:1.8cqw;bottom:1.8cqw;background:rgba(20,19,18,.6);color:#fff;font-family:var(--go);font-size:2.1cqw;letter-spacing:.2em;padding:.7cqw 1.5cqw}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(12,11,10,.96);display:none;flex-direction:column;color:#e9e5dc;font-family:var(--go);touch-action:none;user-select:none}
 .lb.on{display:flex}
 .lb .top{flex:0 0 52px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:13px;letter-spacing:.2em}
@@ -189,15 +188,15 @@ const ITEMS = [
    credits:[["原型","@Mori_Plus1"],["塗装","@Ki_nomi168"]],
    online:"https://wondersmith.booth.pm/items/9104429",
    imgs:["photos/06/1.jpg","photos/06/3.jpg","photos/06/4.jpg","photos/06/2.jpg"]},
-  {name:"「黒悪魔」", series:"", price:"32,000", tag:"", note:"", copy:"",
+  {name:"「黒悪魔」", series:"", price:"32,000", tag:"", note:"オンライン販売のみ", copy:"",
    specs:[["スケール","1/6"],["サイズ","約200mm"],["販売数","15"]], spec:KIT,
    credits:[["イラスト","@0oOpPDb"],["原型","@Ye_Zh_ang"],["塗装","@xiaango"]],
-   online:"https://wondersmith.booth.pm/items/9126940", onlineNote:true,
+   online:"https://wondersmith.booth.pm/items/9126940",
    imgs:["photos/07/1.jpg","photos/07/4.jpg","photos/07/2.jpg","photos/07/6.jpg","photos/07/3.jpg","photos/07/5.jpg"]},
-  {name:"「白悪魔」", series:"", price:"32,000", tag:"", note:"", copy:"",
+  {name:"「白悪魔」", series:"", price:"32,000", tag:"", note:"オンライン販売のみ", copy:"",
    specs:[["スケール","1/6"],["サイズ","240mm"],["販売数","15"]], spec:KIT,
    credits:[["イラスト","@0oOpPDb"],["原型","晔知昂@Ye_Zh_ang"],["塗装","@xiaango"]],
-   online:"https://wondersmith.booth.pm/items/7274790", onlineNote:true,
+   online:"https://wondersmith.booth.pm/items/7274790",
    imgs:["photos/08/1.jpg","photos/08/2.jpg","photos/08/4.jpg","photos/08/3.jpg","photos/08/5.jpg"]},
   {name:"「04君」", series:"", price:"", status:"展示のみ", tag:"クラウドファンディング実施中", note:"", copy:"",
    specs:[["スケール","1/7"],["サイズ","約222mm"]],
@@ -238,7 +237,7 @@ function gallery(it, i) {
   return im.map((src, k) => {
     const [x, y, w, h] = t[k];
     const img = (src ? `;background-image:url('${encodeURI(src)}')` : "") + (it.pos && it.pos[k] ? `;background-position:${it.pos[k]}` : "");
-    return `<div class="ph" data-i="${i}" data-k="${k}" style="left:${x}%;top:${y}%;width:${w}%;height:${h}%${img}">${src ? "" : (n > 1 ? k + 1 : "照片")}${k === 0 && n > 1 ? `<span class="zm">${n} PHOTOS</span>` : ""}</div>`;
+    return `<div class="ph" data-i="${i}" data-k="${k}" style="left:${x}%;top:${y}%;width:${w}%;height:${h}%${img}">${src ? "" : (n > 1 ? k + 1 : "照片")}</div>`;
   }).join("");
 }
 const fo = (n, side) => `<div class="fo ${side}"><span>${esc(INFO.circle)}</span><span>${pad(n)}</span></div>`;
